@@ -7,19 +7,19 @@ public class Tabla_asignacion {
             'N', 'J', 'Z', 'S', 'Q', 'V',
             'H', 'L', 'C', 'K', 'E'};
 
-    Tabla_asignacion() {};
+    public Tabla_asignacion() {};
 
     private int get_modulo() {
         return this.tabla.length;
     }
 
-    char calcular_letra(String DNI) {
+    public char calcular_letra(String DNI) {
         int dni = Integer.parseInt(DNI);
         int posicion = dni % get_modulo();
         return get_letra(posicion);
     }
 
-    char get_letra(int posicion) throws ArrayIndexOutOfBoundsException {
+    public char get_letra(int posicion) throws ArrayIndexOutOfBoundsException {
 
         try {
             return this.tabla[posicion];
@@ -32,7 +32,7 @@ public class Tabla_asignacion {
 
     }
 
-    boolean is_letra_permitida (char letra) {
+    public boolean is_letra_permitida (char letra) {
         String tabla_string = String.valueOf(tabla);
         return tabla_string.contains(Character.toString(letra));
     }
